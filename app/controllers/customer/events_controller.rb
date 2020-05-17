@@ -21,7 +21,7 @@ class Customer::EventsController < Customer::ApiController
   end
 
   def cancel
-    Current.user.events.where(@event.id).delete!
+    Participant.find_by(id: @event.id).delete
     render json: { message: 'Successfully cancelled' }, status: :ok
   rescue StandardError => e
     render json: { error: e.message }, status: :unprocessable_entity

@@ -22105,3 +22105,158 @@ Can't verify CSRF token authenticity.
 Completed 422 Unprocessable Entity in 60ms (Views: 0.1ms | ActiveRecord: 12.2ms | Allocations: 29011)
 
 
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:34:35 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+Completed 422 Unprocessable Entity in 45ms (Views: 0.2ms | ActiveRecord: 9.3ms | Allocations: 29008)
+
+
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:36:49 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+Completed 200 OK in 39ms (Views: 0.2ms | ActiveRecord: 8.6ms | Allocations: 26114)
+
+
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:37:11 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participants" ON "events"."id" = "participants"."event_id" WHERE "participants"."user_id" = $1 AND "events"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/customer/events_controller.rb:27:in `message'
+Completed 422 Unprocessable Entity in 108ms (Views: 0.2ms | ActiveRecord: 9.3ms | Allocations: 31796)
+
+
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:37:36 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+Completed 422 Unprocessable Entity in 42ms (Views: 0.2ms | ActiveRecord: 9.3ms | Allocations: 29157)
+
+
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:37:56 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participants" ON "events"."id" = "participants"."event_id" WHERE "participants"."user_id" = $1 AND "events"."id" = $2 ORDER BY "events"."id" DESC LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:24:in `cancel'
+Completed 422 Unprocessable Entity in 47ms (Views: 0.2ms | ActiveRecord: 10.4ms | Allocations: 31861)
+
+
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:38:23 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participants" ON "events"."id" = "participants"."event_id" WHERE "participants"."user_id" = $1 AND "events"."id" = $2 ORDER BY "events"."id" DESC LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:24:in `cancel'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customer/events_controller.rb:24:in `cancel'
+  [1m[36mEvent Destroy (4.0ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/customer/events_controller.rb:24:in `cancel'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/customer/events_controller.rb:24:in `cancel'
+Completed 422 Unprocessable Entity in 57ms (Views: 0.2ms | ActiveRecord: 14.3ms | Allocations: 32476)
+
+
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:41:25 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.4ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participants" ON "events"."id" = "participants"."event_id" WHERE "participants"."user_id" = $1 AND "events"."id" = $2 ORDER BY "events"."id" DESC LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:24:in `cancel'
+  [1m[36mEvent Destroy (1.3ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/customer/events_controller.rb:24:in `cancel'
+Completed 422 Unprocessable Entity in 67ms (Views: 0.2ms | ActiveRecord: 14.6ms | Allocations: 30782)
+
+
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:42:20 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+Completed 422 Unprocessable Entity in 60ms (Views: 0.2ms | ActiveRecord: 7.6ms | Allocations: 28140)
+
+
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:42:32 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.4ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+  [1m[36mParticipant Load (0.2ms)[0m  [1m[34mSELECT "participants".* FROM "participants" WHERE "participants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:24:in `cancel'
+  [1m[36mParticipant Destroy (0.6ms)[0m  [1m[31mDELETE FROM "participants" WHERE "participants"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/customer/events_controller.rb:24:in `cancel'
+Completed 200 OK in 76ms (Views: 0.2ms | ActiveRecord: 14.0ms | Allocations: 31133)
+
+
