@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     delete 'logout' => 'sessions#logout'
     put '/forgot_password', to: 'sessions#forgot_password'
     put '/users/:reset_password_token/reset_password', to: 'users#reset_password'
-    get '/users', to: 'users#list'    
-    resources :users, only: %i[show create update]
+    resources :users, only: %i[show create update index]
+    resources :events, only: %i[show create update index]
   end
 end

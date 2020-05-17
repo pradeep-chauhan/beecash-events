@@ -6,7 +6,8 @@ class UserForm
 
   attr_accessor :id, :name, :email, :gender, :role, :password, :password_digest, :reset_password_token, :reset_password_token_expire_at, :confirmation_token, :is_email_confirmed, :is_active, :created_at, :updated_at, :object
 
-  validates :name, :email, :gender, :role, presence: true
+  validates :name, :gender, :role, presence: true
+  validates :email, presence: true, format: { with: /\A[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}\z/ }
   validates :gender, inclusion: { in: GENDERS }
   validate :unique_email_address
   validates :role, inclusion: { in: ROLES }

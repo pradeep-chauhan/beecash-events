@@ -12,7 +12,7 @@ class Admin::UsersController < Admin::ApiController
 
   def list
     users = User.all
-    render json: { data:users }, status: :ok
+    render json: { users: users }, status: :ok
   end
 
   def show
