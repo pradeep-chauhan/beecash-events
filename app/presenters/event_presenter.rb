@@ -18,9 +18,9 @@ class EventPresenter
       organizor: event.organizor,
       start_date: event.start_date,
       end_date: event.end_date,
-      seat_capacity: event.seat_capacity,
-      attendee: event.object.users.size
+      seat_capacity: event.seat_capacity
     }
+    response[:attendee] = event.users.size if options[:attendee_included]
     response[:users] = event.users if options[:users_included]
     response
   end

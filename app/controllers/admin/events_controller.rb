@@ -9,7 +9,7 @@ class Admin::EventsController < Admin::ApiController
   end
 
   def show
-    render json: { event: EventPresenter.new(@event)._show }, status: :ok
+    render json: { event: EventPresenter.new(@event)._show(attendee_included: true) }, status: :ok
   end
 
   def create
@@ -23,7 +23,7 @@ class Admin::EventsController < Admin::ApiController
   def update
     event = EventForm.new(event_params, params[:id])
     event.persist
-    render json: { event: EventPresenter.new(event.object)._show }, status: :ok
+    render json: { event: EventPresenter.new(event.object)._show(attendee_included: true) }, status: :ok
   rescue StandardError => e
     render json: { error: e.message }, status: :unprocessable_entity
   end

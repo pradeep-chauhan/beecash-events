@@ -20821,3 +20821,384 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 67ms (Views: 0.3ms | ActiveRecord: 14.2ms | Allocations: 33280)
 
 
+Started GET "/admin/events/1" for ::1 at 2020-05-17 15:18:37 +0530
+Processing by Admin::EventsController#show as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+  [1m[36mAuthToken Load (0.4ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/events_controller.rb:34:in `exists'
+Filter chain halted as :exists rendered or redirected
+Completed 404 Not Found in 11ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 3343)
+
+
+Started POST "/admin/events" for ::1 at 2020-05-17 15:22:25 +0530
+Processing by Admin::EventsController#create as */*
+  Parameters: {"event"=>{"title"=>"test", "description"=>"testing", "address"=>"udaipur", "city"=>"udaipur", "state"=>"rajasthan", "organizor"=>"pc", "start_date"=>"2020-05-20", "end_date"=>"2020-05-21", "seat_capacity"=>"10"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.4ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("title", "description", "address", "city", "state", "organizor", "start_date", "end_date", "seat_capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "test"], ["description", "testing"], ["address", "udaipur"], ["city", "udaipur"], ["state", "rajasthan"], ["organizor", "pc"], ["start_date", "2020-05-20 00:00:00"], ["end_date", "2020-05-21 00:00:00"], ["seat_capacity", 10], ["created_at", "2020-05-17 09:52:25.313883"], ["updated_at", "2020-05-17 09:52:25.313883"]]
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 19]]
+  ↳ app/presenters/event_presenter.rb:22:in `_show'
+Completed 200 OK in 64ms (Views: 0.2ms | ActiveRecord: 13.8ms | Allocations: 33417)
+
+
+Started POST "/admin/events" for ::1 at 2020-05-17 15:23:35 +0530
+Processing by Admin::EventsController#create as */*
+  Parameters: {"event"=>{"title"=>"test", "description"=>"testing", "address"=>"udaipur", "city"=>"udaipur", "state"=>"rajasthan", "organizor"=>"pc", "start_date"=>"2020-05-20", "end_date"=>"2020-05-21", "seat_capacity"=>"10"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.3ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[36mEvent Create (0.3ms)[0m  [1m[32mINSERT INTO "events" ("title", "description", "address", "city", "state", "organizor", "start_date", "end_date", "seat_capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "test"], ["description", "testing"], ["address", "udaipur"], ["city", "udaipur"], ["state", "rajasthan"], ["organizor", "pc"], ["start_date", "2020-05-20 00:00:00"], ["end_date", "2020-05-21 00:00:00"], ["seat_capacity", 10], ["created_at", "2020-05-17 09:53:35.235158"], ["updated_at", "2020-05-17 09:53:35.235158"]]
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 20]]
+  ↳ app/presenters/event_presenter.rb:24:in `_show'
+Completed 200 OK in 77ms (Views: 0.2ms | ActiveRecord: 11.7ms | Allocations: 33501)
+
+
+Started POST "/admin/users" for ::1 at 2020-05-17 15:24:47 +0530
+Processing by Admin::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"pradeep chauhan", "email"=>"pradeep@gkmit.co", "gender"=>"male", "password"=>"[FILTERED]", "role"=>"customer"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.3ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "Bf4MI_VQ5qI"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mAuthToken Destroy (0.5ms)[0m  [1m[31mDELETE FROM "auth_tokens" WHERE "auth_tokens"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `delete_expired_token'
+Filter chain halted as :delete_expired_token rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1572)
+
+
+Started POST "/admin/users" for ::1 at 2020-05-17 15:25:06 +0530
+Processing by Admin::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"pradeep chauhan", "email"=>"pradeep@gkmit.co", "gender"=>"male", "password"=>"[FILTERED]", "role"=>"customer"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.5ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" IS NOT NULL LIMIT $2[0m  [["email", "pradeep@gkmit.co"], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:16:in `unique_email_address'
+Completed 422 Unprocessable Entity in 226ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 5366)
+
+
+Started POST "/admin/users" for ::1 at 2020-05-17 15:25:15 +0530
+Processing by Admin::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"pradeep chauhan", "email"=>"pradeep1@gkmit.co", "gender"=>"male", "password"=>"[FILTERED]", "role"=>"customer"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.3ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" IS NOT NULL LIMIT $2[0m  [["email", "pradeep1@gkmit.co"], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:16:in `unique_email_address'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/user_form.rb:28:in `persist'
+  [1m[36mUser Create (4.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "gender", "role", "is_active", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "pradeep chauhan"], ["email", "pradeep1@gkmit.co"], ["gender", "male"], ["role", "customer"], ["is_active", true], ["password_digest", "$2a$12$/KbA2qe8ID1w9ww9HYr/xe/UiJefkkVt2mIABHubRlt.uDpHYxHzS"], ["created_at", "2020-05-17 09:55:15.369590"], ["updated_at", "2020-05-17 09:55:15.369590"]]
+  ↳ app/forms/user_form.rb:28:in `persist'
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "confirmation_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmation_token", "Q4GvBoAjcTk"], ["updated_at", "2020-05-17 09:55:15.376500"], ["id", 9]]
+  ↳ app/models/user.rb:32:in `generate_confirmation_token'
+  Rendering beecash_events_mailer/send_registration_confirmation_email.html.erb within layouts/mailer
+  Rendered beecash_events_mailer/send_registration_confirmation_email.html.erb within layouts/mailer (Duration: 0.9ms | Allocations: 120)
+BeecashEventsMailer#send_registration_confirmation_email: processed outbound mail in 8.6ms
+Delivered mail 5ec10a03797cc_53303ff55b805af840832@MacBook-Pro.local.mail (13.0ms)
+Date: Sun, 17 May 2020 15:25:15 +0530
+From: prdpchauhan4@gmail.com
+To: pradeep1@gkmit.co
+Message-ID: <5ec10a03797cc_53303ff55b805af840832@MacBook-Pro.local.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    Hi pradeep chauhan,
+<br />
+Thanks for registering! To confirm your registration click the URL below.
+<br />
+http://localhost:3000/verify-email#Q4GvBoAjcTk
+  </body>
+</html>
+
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/user_form.rb:28:in `persist'
+Completed 200 OK in 357ms (Views: 0.3ms | ActiveRecord: 9.1ms | Allocations: 35708)
+
+
+Started POST "/admin/users" for ::1 at 2020-05-17 15:28:26 +0530
+Processing by Admin::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"pradeep chauhan", "email"=>"pradeep1@gkmit.co", "gender"=>"male", "password"=>"[FILTERED]", "role"=>"customer"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" IS NOT NULL LIMIT $2[0m  [["email", "pradeep1@gkmit.co"], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:16:in `unique_email_address'
+Completed 422 Unprocessable Entity in 237ms (Views: 0.2ms | ActiveRecord: 5.7ms | Allocations: 18959)
+
+
+Started POST "/admin/events" for ::1 at 2020-05-17 15:28:31 +0530
+Processing by Admin::EventsController#create as */*
+  Parameters: {"event"=>{"title"=>"test", "description"=>"testing", "address"=>"udaipur", "city"=>"udaipur", "state"=>"rajasthan", "organizor"=>"pc", "start_date"=>"2020-05-20", "end_date"=>"2020-05-21", "seat_capacity"=>"10"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.3ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("title", "description", "address", "city", "state", "organizor", "start_date", "end_date", "seat_capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "test"], ["description", "testing"], ["address", "udaipur"], ["city", "udaipur"], ["state", "rajasthan"], ["organizor", "pc"], ["start_date", "2020-05-20 00:00:00"], ["end_date", "2020-05-21 00:00:00"], ["seat_capacity", 10], ["created_at", "2020-05-17 09:58:32.008753"], ["updated_at", "2020-05-17 09:58:32.008753"]]
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 21]]
+  ↳ app/presenters/event_presenter.rb:24:in `_show'
+Completed 200 OK in 38ms (Views: 0.7ms | ActiveRecord: 7.6ms | Allocations: 17122)
+
+
+Started GET "/admin/events/21" for ::1 at 2020-05-17 15:28:43 +0530
+Processing by Admin::EventsController#show as */*
+  Parameters: {"id"=>"21", "event"=>{}}
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/admin/events_controller.rb:35:in `exists'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.8ms | Allocations: 5376)
+
+
+  
+NoMethodError (undefined method `object' for #<Event:0x00007feab1514980>
+Did you mean?  object_id):
+  
+app/presenters/event_presenter.rb:14:in `_show'
+app/controllers/admin/events_controller.rb:12:in `show'
+Started GET "/admin/events/21" for ::1 at 2020-05-17 15:30:34 +0530
+Processing by Admin::EventsController#show as */*
+  Parameters: {"id"=>"21", "event"=>{}}
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/admin/events_controller.rb:34:in `exists'
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 8.1ms | Allocations: 29094)
+
+
+  
+NoMethodError (undefined method `object' for #<Event:0x00007feab27991f0>
+Did you mean?  object_id):
+  
+app/presenters/event_presenter.rb:24:in `_show'
+app/controllers/admin/events_controller.rb:12:in `show'
+Started GET "/admin/events/21" for ::1 at 2020-05-17 15:31:12 +0530
+Processing by Admin::EventsController#show as */*
+  Parameters: {"id"=>"21", "event"=>{}}
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/admin/events_controller.rb:34:in `exists'
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 7.3ms | Allocations: 29004)
+
+
+  
+NoMethodError (undefined method `object' for #<Event:0x00007feab74f9c60>
+Did you mean?  object_id):
+  
+app/presenters/event_presenter.rb:22:in `_show'
+app/controllers/admin/events_controller.rb:12:in `show'
+Started GET "/admin/events/21" for ::1 at 2020-05-17 15:31:57 +0530
+Processing by Admin::EventsController#show as */*
+  Parameters: {"id"=>"21", "event"=>{}}
+  [1m[36mAuthToken Load (0.3ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/admin/events_controller.rb:34:in `exists'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 21]]
+  ↳ app/presenters/event_presenter.rb:22:in `_show'
+Completed 200 OK in 40ms (Views: 0.2ms | ActiveRecord: 8.7ms | Allocations: 29642)
+
+
+Started POST "/admin/events" for ::1 at 2020-05-17 15:32:04 +0530
+Processing by Admin::EventsController#create as */*
+  Parameters: {"event"=>{"title"=>"test", "description"=>"testing", "address"=>"udaipur", "city"=>"udaipur", "state"=>"rajasthan", "organizor"=>"pc", "start_date"=>"2020-05-20", "end_date"=>"2020-05-21", "seat_capacity"=>"10"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.3ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("title", "description", "address", "city", "state", "organizor", "start_date", "end_date", "seat_capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "test"], ["description", "testing"], ["address", "udaipur"], ["city", "udaipur"], ["state", "rajasthan"], ["organizor", "pc"], ["start_date", "2020-05-20 00:00:00"], ["end_date", "2020-05-21 00:00:00"], ["seat_capacity", 10], ["created_at", "2020-05-17 10:02:04.498645"], ["updated_at", "2020-05-17 10:02:04.498645"]]
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+Completed 422 Unprocessable Entity in 16ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 6924)
+
+
+Started POST "/admin/events" for ::1 at 2020-05-17 15:33:19 +0530
+Processing by Admin::EventsController#create as */*
+  Parameters: {"event"=>{"title"=>"test", "description"=>"testing", "address"=>"udaipur", "city"=>"udaipur", "state"=>"rajasthan", "organizor"=>"pc", "start_date"=>"2020-05-20", "end_date"=>"2020-05-21", "seat_capacity"=>"10"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.1ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[36mEvent Create (0.3ms)[0m  [1m[32mINSERT INTO "events" ("title", "description", "address", "city", "state", "organizor", "start_date", "end_date", "seat_capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "test"], ["description", "testing"], ["address", "udaipur"], ["city", "udaipur"], ["state", "rajasthan"], ["organizor", "pc"], ["start_date", "2020-05-20 00:00:00"], ["end_date", "2020-05-21 00:00:00"], ["seat_capacity", 10], ["created_at", "2020-05-17 10:03:20.109847"], ["updated_at", "2020-05-17 10:03:20.109847"]]
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+Completed 422 Unprocessable Entity in 76ms (Views: 0.2ms | ActiveRecord: 8.0ms | Allocations: 31397)
+
+
+Started POST "/admin/events" for ::1 at 2020-05-17 15:33:56 +0530
+Processing by Admin::EventsController#create as */*
+  Parameters: {"event"=>{"title"=>"test", "description"=>"testing", "address"=>"udaipur", "city"=>"udaipur", "state"=>"rajasthan", "organizor"=>"pc", "start_date"=>"2020-05-20", "end_date"=>"2020-05-21", "seat_capacity"=>"10"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[36mEvent Create (0.3ms)[0m  [1m[32mINSERT INTO "events" ("title", "description", "address", "city", "state", "organizor", "start_date", "end_date", "seat_capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "test"], ["description", "testing"], ["address", "udaipur"], ["city", "udaipur"], ["state", "rajasthan"], ["organizor", "pc"], ["start_date", "2020-05-20 00:00:00"], ["end_date", "2020-05-21 00:00:00"], ["seat_capacity", 10], ["created_at", "2020-05-17 10:03:56.232120"], ["updated_at", "2020-05-17 10:03:56.232120"]]
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+Completed 422 Unprocessable Entity in 45ms (Views: 0.2ms | ActiveRecord: 8.3ms | Allocations: 31397)
+
+
+Started POST "/admin/events" for ::1 at 2020-05-17 15:34:46 +0530
+Processing by Admin::EventsController#create as */*
+  Parameters: {"event"=>{"title"=>"test", "description"=>"testing", "address"=>"udaipur", "city"=>"udaipur", "state"=>"rajasthan", "organizor"=>"pc", "start_date"=>"2020-05-20", "end_date"=>"2020-05-21", "seat_capacity"=>"10"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.1ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[36mEvent Create (0.2ms)[0m  [1m[32mINSERT INTO "events" ("title", "description", "address", "city", "state", "organizor", "start_date", "end_date", "seat_capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "test"], ["description", "testing"], ["address", "udaipur"], ["city", "udaipur"], ["state", "rajasthan"], ["organizor", "pc"], ["start_date", "2020-05-20 00:00:00"], ["end_date", "2020-05-21 00:00:00"], ["seat_capacity", 10], ["created_at", "2020-05-17 10:04:46.792714"], ["updated_at", "2020-05-17 10:04:46.792714"]]
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+Completed 422 Unprocessable Entity in 44ms (Views: 0.2ms | ActiveRecord: 8.7ms | Allocations: 31356)
+
+
+Started POST "/admin/events" for ::1 at 2020-05-17 15:35:38 +0530
+Processing by Admin::EventsController#create as */*
+  Parameters: {"event"=>{"title"=>"test", "description"=>"testing", "address"=>"udaipur", "city"=>"udaipur", "state"=>"rajasthan", "organizor"=>"pc", "start_date"=>"2020-05-20", "end_date"=>"2020-05-21", "seat_capacity"=>"10"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.4ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[36mEvent Create (0.3ms)[0m  [1m[32mINSERT INTO "events" ("title", "description", "address", "city", "state", "organizor", "start_date", "end_date", "seat_capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "test"], ["description", "testing"], ["address", "udaipur"], ["city", "udaipur"], ["state", "rajasthan"], ["organizor", "pc"], ["start_date", "2020-05-20 00:00:00"], ["end_date", "2020-05-21 00:00:00"], ["seat_capacity", 10], ["created_at", "2020-05-17 10:05:38.328092"], ["updated_at", "2020-05-17 10:05:38.328092"]]
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+Completed 422 Unprocessable Entity in 55ms (Views: 0.2ms | ActiveRecord: 9.2ms | Allocations: 31402)
+
+
+Started POST "/admin/events" for ::1 at 2020-05-17 15:41:52 +0530
+Processing by Admin::EventsController#create as */*
+  Parameters: {"event"=>{"title"=>"test", "description"=>"testing", "address"=>"udaipur", "city"=>"udaipur", "state"=>"rajasthan", "organizor"=>"pc", "start_date"=>"2020-05-20", "end_date"=>"2020-05-21", "seat_capacity"=>"10"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.3ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("title", "description", "address", "city", "state", "organizor", "start_date", "end_date", "seat_capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "test"], ["description", "testing"], ["address", "udaipur"], ["city", "udaipur"], ["state", "rajasthan"], ["organizor", "pc"], ["start_date", "2020-05-20 00:00:00"], ["end_date", "2020-05-21 00:00:00"], ["seat_capacity", 10], ["created_at", "2020-05-17 10:11:52.314596"], ["updated_at", "2020-05-17 10:11:52.314596"]]
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+Completed 200 OK in 44ms (Views: 0.3ms | ActiveRecord: 2.6ms | Allocations: 29935)
+
+
+Started GET "/admin/events/21" for ::1 at 2020-05-17 15:44:05 +0530
+Processing by Admin::EventsController#show as */*
+  Parameters: {"id"=>"21", "event"=>{}}
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/admin/events_controller.rb:34:in `exists'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 21]]
+  ↳ app/presenters/event_presenter.rb:23:in `_show'
+Completed 200 OK in 59ms (Views: 0.3ms | ActiveRecord: 11.2ms | Allocations: 29573)
+
+

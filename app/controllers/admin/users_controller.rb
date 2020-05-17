@@ -10,7 +10,7 @@ class Admin::UsersController < Admin::ApiController
     render json: { users: users.map { |user| UserPresenter.new(user)._show } }, status: :ok
   end
 
-  def list
+  def index
     users = User.all
     render json: { users: users }, status: :ok
   end
