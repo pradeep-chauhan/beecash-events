@@ -53,6 +53,6 @@ class Customer::UsersController < Customer::ApiController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :role, :phone_number, :password)
+    params.require(:user).permit(:name, :email, :gender, :is_active, :role, :phone_number, :password, :event_ids)
   end
 end

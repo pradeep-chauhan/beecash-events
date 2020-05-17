@@ -22,7 +22,6 @@ class ApplicationController < ActionController::Base
 
   def current_user
     Current.user = AuthToken.find_by(token: request.headers['Authorization']).user
-    p Current.user
   end
 
   def render_error_response(exception)

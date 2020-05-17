@@ -21202,3 +21202,906 @@ Processing by Admin::EventsController#show as */*
 Completed 200 OK in 59ms (Views: 0.3ms | ActiveRecord: 11.2ms | Allocations: 29573)
 
 
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1[0m  [["id", 21]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_users" ON "events"."id" = "events_users"."event_id" WHERE "events_users"."user_id" = $1[0m  [["user_id", 9]]
+  [1m[36mUser::HABTM_Events Create (5.3ms)[0m  [1m[32mINSERT INTO "events_users" ("event_id", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["event_id", 21], ["user_id", 9]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_users" ON "events"."id" = "events_users"."event_id" WHERE "events_users"."user_id" = $1 LIMIT $2[0m  [["user_id", 9], ["LIMIT", 11]]
+Started PUT "/admin/user/2" for ::1 at 2020-05-17 15:49:54 +0530
+  
+ActionController::RoutingError (No route matches [PUT] "/admin/user/2"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PUT "/admin/user/9" for ::1 at 2020-05-17 15:51:10 +0530
+  
+ActionController::RoutingError (No route matches [PUT] "/admin/user/9"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PUT "/admin/users/9" for ::1 at 2020-05-17 15:52:53 +0530
+Processing by Admin::UsersController#update as */*
+  Parameters: {"user"=>{"event_ids"=>[21]}, "id"=>"9"}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (1.1ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:48:in `exists'
+[31mUnpermitted parameter: :event_ids[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:20:in `initialize'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "pradeep1@gkmit.co"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:16:in `unique_email_address'
+Completed 200 OK in 45ms (Views: 0.8ms | ActiveRecord: 3.7ms | Allocations: 19675)
+
+
+Started PUT "/admin/users/9" for ::1 at 2020-05-17 15:53:03 +0530
+Processing by Admin::UsersController#update as */*
+  Parameters: {"user"=>{"event_ids"=>[22]}, "id"=>"9"}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.7ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.1ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:48:in `exists'
+[31mUnpermitted parameter: :event_ids[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:20:in `initialize'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "pradeep1@gkmit.co"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:16:in `unique_email_address'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 4783)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_users" ON "events"."id" = "events_users"."event_id" WHERE "events_users"."user_id" = $1 LIMIT $2[0m  [["user_id", 9], ["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_users" ON "events"."id" = "events_users"."event_id" WHERE "events_users"."user_id" = $1 LIMIT $2[0m  [["user_id", 9], ["LIMIT", 11]]
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started PUT "/admin/users/9" for ::1 at 2020-05-17 15:53:41 +0530
+Processing by Admin::UsersController#update as */*
+  Parameters: {"user"=>{"event_ids"=>[27]}, "id"=>"9"}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (3.6ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:48:in `exists'
+[31mUnpermitted parameter: :event_ids[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:20:in `initialize'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "pradeep1@gkmit.co"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:16:in `unique_email_address'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 8.5ms | Allocations: 4778)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_users" ON "events"."id" = "events_users"."event_id" WHERE "events_users"."user_id" = $1 LIMIT $2[0m  [["user_id", 9], ["LIMIT", 11]]
+Started PUT "/admin/users/9" for ::1 at 2020-05-17 15:54:58 +0530
+Processing by Admin::UsersController#update as */*
+  Parameters: {"user"=>{"event_ids"=>[27]}, "id"=>"9"}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "lcSFRi5_Y68"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/admin/users_controller.rb:48:in `exists'
+[31mUnpermitted parameter: :event_ids[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:20:in `initialize'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "pradeep1@gkmit.co"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:16:in `unique_email_address'
+Completed 200 OK in 36ms (Views: 0.2ms | ActiveRecord: 9.2ms | Allocations: 20094)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_users" ON "events"."id" = "events_users"."event_id" WHERE "events_users"."user_id" = $1 LIMIT $2[0m  [["user_id", 9], ["LIMIT", 11]]
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (98.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "beecash_events_development"[0m
+  [1m[35m (43.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "beecash_events_test"[0m
+  [1m[35m (164.8ms)[0m  [1m[35mCREATE DATABASE "beecash_events_development" ENCODING = 'utf8'[0m
+  [1m[35m (146.2ms)[0m  [1m[35mCREATE DATABASE "beecash_events_test" ENCODING = 'utf8'[0m
+  [1m[35m (28.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3926390739948024600)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAuthTokens (20200514081532)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "auth_tokens" ("id" bigserial primary key, "user_id" integer, "token" character varying, "expire_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200514081532"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20200514081818)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "gender" character varying NOT NULL, "role" character varying NOT NULL, "is_active" boolean DEFAULT FALSE NOT NULL, "password_digest" character varying, "confirmation_token" character varying, "is_email_confirmed" boolean DEFAULT FALSE NOT NULL, "reset_password_token" character varying, "reset_password_token_expire_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200514081818"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (20200517071746)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "title" character varying NOT NULL, "description" text NOT NULL, "address" text NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "organizor" character varying NOT NULL, "start_date" timestamp NOT NULL, "end_date" timestamp NOT NULL, "seat_capacity" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200517071746"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateParticipants (20200517115350)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "participants" ("id" bigserial primary key, "user_id" bigint NOT NULL, "event_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_b9a3c50f15"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_277582be2b"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_participants_on_user_id" ON "participants"  ("user_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_participants_on_event_id" ON "participants"  ("event_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200517115350"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-17 12:53:30.817604"], ["updated_at", "2020-05-17 12:53:30.817604"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3926390739948024600)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Exists? (5.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" IS NOT NULL LIMIT $2[0m  [["email", "prdpchauhan4@gmail.com"], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:16:in `unique_email_address'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/user_form.rb:28:in `persist'
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "gender", "role", "is_active", "password_digest", "is_email_confirmed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Pradeep Chauhan"], ["email", "prdpchauhan4@gmail.com"], ["gender", "male"], ["role", "admin"], ["is_active", true], ["password_digest", "$2a$12$pc.PiGc9fCbUwKnsrebt3eU9yvEePoI2Bg3jYgAZHKjwktJk2dXBy"], ["is_email_confirmed", true], ["created_at", "2020-05-17 12:54:06.795374"], ["updated_at", "2020-05-17 12:54:06.795374"]]
+  ↳ app/forms/user_form.rb:28:in `persist'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/user_form.rb:28:in `persist'
+Started POST "/customer/users" for ::1 at 2020-05-17 18:25:56 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Customer::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"pradeep chauhan", "email"=>"pradeep@gkmit.co", "gender"=>"male", "password"=>"[FILTERED]", "role"=>"customer"}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :gender[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" IS NOT NULL LIMIT $2[0m  [["email", "pradeep@gkmit.co"], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:16:in `unique_email_address'
+Completed 422 Unprocessable Entity in 239ms (Views: 0.2ms | ActiveRecord: 4.1ms | Allocations: 14552)
+
+
+Started POST "/customer/users" for ::1 at 2020-05-17 18:26:47 +0530
+Processing by Customer::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"pradeep chauhan", "email"=>"pradeep@gkmit.co", "gender"=>"male", "password"=>"[FILTERED]", "role"=>"customer"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" IS NOT NULL LIMIT $2[0m  [["email", "pradeep@gkmit.co"], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:16:in `unique_email_address'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/user_form.rb:28:in `persist'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "gender", "role", "is_active", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "pradeep chauhan"], ["email", "pradeep@gkmit.co"], ["gender", "male"], ["role", "customer"], ["is_active", true], ["password_digest", "$2a$12$aG7lxd22mAgUxb7Ks2oCZuAhxuNFrKHOn5IJTQbGW1VsMKVCT85LG"], ["created_at", "2020-05-17 12:56:47.799599"], ["updated_at", "2020-05-17 12:56:47.799599"]]
+  ↳ app/forms/user_form.rb:28:in `persist'
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "confirmation_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmation_token", "PS5GYxA_8bY"], ["updated_at", "2020-05-17 12:56:47.802440"], ["id", 2]]
+  ↳ app/models/user.rb:33:in `generate_confirmation_token'
+  Rendering beecash_events_mailer/send_registration_confirmation_email.html.erb within layouts/mailer
+  Rendered beecash_events_mailer/send_registration_confirmation_email.html.erb within layouts/mailer (Duration: 2.2ms | Allocations: 232)
+BeecashEventsMailer#send_registration_confirmation_email: processed outbound mail in 12.1ms
+Delivered mail 5ec1348fd16b6_5ed13feb97da13cc80487@MacBook-Pro.local.mail (6.2ms)
+Date: Sun, 17 May 2020 18:26:47 +0530
+From: prdpchauhan4@gmail.com
+To: pradeep@gkmit.co
+Message-ID: <5ec1348fd16b6_5ed13feb97da13cc80487@MacBook-Pro.local.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    Hi pradeep chauhan,
+<br />
+Thanks for registering! To confirm your registration click the URL below.
+<br />
+http://localhost:3000/verify-email#PS5GYxA_8bY
+  </body>
+</html>
+
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/user_form.rb:28:in `persist'
+Completed 200 OK in 298ms (Views: 0.2ms | ActiveRecord: 9.3ms | Allocations: 35296)
+
+
+Started POST "/customer/login" for ::1 at 2020-05-17 18:27:27 +0530
+Processing by Customer::SessionsController#login as */*
+  Parameters: {"user"=>{"email"=>"pradeep@gkmit.co", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"pradeep@gkmit.co", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pradeep@gkmit.co"], ["LIMIT", 1]]
+  ↳ app/controllers/customer/sessions_controller.rb:38:in `exists'
+  [1m[36mAuthToken Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 AND "auth_tokens"."id" IS NOT NULL LIMIT $2[0m  [["token", "EsRf4c7B5SE"], ["LIMIT", 1]]
+  ↳ app/forms/auth_token_form.rb:26:in `unique_token'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+  [1m[36mAuthToken Create (0.6ms)[0m  [1m[32mINSERT INTO "auth_tokens" ("user_id", "token", "expire_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["token", "EsRf4c7B5SE"], ["expire_at", "2020-05-18 12:57:27.999047"], ["created_at", "2020-05-17 12:57:28.010013"], ["updated_at", "2020-05-17 12:57:28.010013"]]
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+Completed 200 OK in 239ms (Views: 0.2ms | ActiveRecord: 5.6ms | Allocations: 13153)
+
+
+Started POST "/customer/login" for ::1 at 2020-05-17 18:43:27 +0530
+Processing by Customer::SessionsController#login as */*
+  Parameters: {"user"=>{"email"=>"pradeep@gkmit.co", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"pradeep@gkmit.co", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pradeep@gkmit.co"], ["LIMIT", 1]]
+  ↳ app/controllers/customer/sessions_controller.rb:38:in `exists'
+  [1m[36mAuthToken Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 AND "auth_tokens"."id" IS NOT NULL LIMIT $2[0m  [["token", "pESRboZg09U"], ["LIMIT", 1]]
+  ↳ app/forms/auth_token_form.rb:26:in `unique_token'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+  [1m[36mAuthToken Create (0.5ms)[0m  [1m[32mINSERT INTO "auth_tokens" ("user_id", "token", "expire_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["token", "pESRboZg09U"], ["expire_at", "2020-05-18 13:13:27.780658"], ["created_at", "2020-05-17 13:13:27.785573"], ["updated_at", "2020-05-17 13:13:27.785573"]]
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+Completed 200 OK in 216ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 5748)
+
+
+Started GET "/customer/events" for ::1 at 2020-05-17 18:44:15 +0530
+Processing by Customer::EventsController#index as */*
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/customer/events_controller.rb:9:in `map'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 3.5ms | Allocations: 1029)
+
+
+Started POST "/admin/login" for ::1 at 2020-05-17 18:44:40 +0530
+Processing by Admin::SessionsController#login as */*
+  Parameters: {"user"=>{"email"=>"prdpchauhan4@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"prdpchauhan4@gmail.com", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "prdpchauhan4@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:38:in `exists'
+  [1m[36mAuthToken Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 AND "auth_tokens"."id" IS NOT NULL LIMIT $2[0m  [["token", "JcyO9RpU3EE"], ["LIMIT", 1]]
+  ↳ app/forms/auth_token_form.rb:26:in `unique_token'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+  [1m[36mAuthToken Create (0.3ms)[0m  [1m[32mINSERT INTO "auth_tokens" ("user_id", "token", "expire_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["token", "JcyO9RpU3EE"], ["expire_at", "2020-05-18 13:14:41.113026"], ["created_at", "2020-05-17 13:14:41.117636"], ["updated_at", "2020-05-17 13:14:41.117636"]]
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+Completed 200 OK in 217ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 5746)
+
+
+Started POST "/admin/event/" for ::1 at 2020-05-17 18:45:31 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/admin/event"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/admin/events/" for ::1 at 2020-05-17 18:45:39 +0530
+Processing by Admin::EventsController#create as */*
+  Parameters: {"event"=>{"title"=>"test", "description"=>"testing", "address"=>"udaipur", "city"=>"udaipur", "state"=>"rajasthan", "organizor"=>"pc", "start_date"=>"2020-05-20", "end_date"=>"2020-05-21", "seat_capacity"=>"10"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (1.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "JcyO9RpU3EE"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.1ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "JcyO9RpU3EE"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("title", "description", "address", "city", "state", "organizor", "start_date", "end_date", "seat_capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "test"], ["description", "testing"], ["address", "udaipur"], ["city", "udaipur"], ["state", "rajasthan"], ["organizor", "pc"], ["start_date", "2020-05-20 00:00:00"], ["end_date", "2020-05-21 00:00:00"], ["seat_capacity", 10], ["created_at", "2020-05-17 13:15:39.645577"], ["updated_at", "2020-05-17 13:15:39.645577"]]
+  ↳ app/forms/event_form.rb:24:in `persist'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/event_form.rb:24:in `persist'
+Completed 200 OK in 61ms (Views: 0.3ms | ActiveRecord: 22.2ms | Allocations: 14135)
+
+
+Started GET "/customer/events/1" for ::1 at 2020-05-17 18:45:57 +0530
+Processing by Customer::EventsController#show as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+  [1m[36mAuthToken Load (3.8ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "pESRboZg09U"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "pESRboZg09U"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+Completed 401 Unauthorized in 12ms (Views: 0.4ms | ActiveRecord: 4.7ms | Allocations: 2603)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/customer/events/1" for ::1 at 2020-05-17 18:51:00 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/customer/events/1"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/customer/events/1" for ::1 at 2020-05-17 18:52:23 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/customer/events/1"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/customers/events/1" for ::1 at 2020-05-17 18:52:49 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/customers/events/1"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/customers/events/1" for ::1 at 2020-05-17 18:56:32 +0530
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/customers/events/1"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/customer/events/1" for ::1 at 2020-05-17 18:58:48 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.7ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "pESRboZg09U"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "pESRboZg09U"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+Completed 401 Unauthorized in 57ms (Views: 0.2ms | ActiveRecord: 12.2ms | Allocations: 21254)
+
+
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "is_email_confirmed" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["is_email_confirmed", true], ["updated_at", "2020-05-17 13:29:03.745834"], ["id", 2]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/customer/events/1" for ::1 at 2020-05-17 18:59:10 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.4ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "pESRboZg09U"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "pESRboZg09U"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+Completed 401 Unauthorized in 11ms (Views: 0.1ms | ActiveRecord: 2.1ms | Allocations: 2650)
+
+
+Started POST "/customer/login" for ::1 at 2020-05-17 19:00:12 +0530
+Processing by Customer::SessionsController#login as */*
+  Parameters: {"user"=>{"email"=>"pradeep@gkmit.co", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"pradeep@gkmit.co", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pradeep@gkmit.co"], ["LIMIT", 1]]
+  ↳ app/controllers/customer/sessions_controller.rb:38:in `exists'
+  [1m[36mAuthToken Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 AND "auth_tokens"."id" IS NOT NULL LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/forms/auth_token_form.rb:26:in `unique_token'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+  [1m[36mAuthToken Create (0.8ms)[0m  [1m[32mINSERT INTO "auth_tokens" ("user_id", "token", "expire_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["token", "naf_HH3TAfs"], ["expire_at", "2020-05-18 13:30:12.968993"], ["created_at", "2020-05-17 13:30:12.973626"], ["updated_at", "2020-05-17 13:30:12.973626"]]
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/forms/auth_token_form.rb:20:in `persist'
+Completed 200 OK in 238ms (Views: 0.2ms | ActiveRecord: 6.6ms | Allocations: 22917)
+
+
+Started POST "/customer/events/1" for ::1 at 2020-05-17 19:00:25 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.3ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 2930)
+
+
+Started POST "/customer/events/1" for ::1 at 2020-05-17 19:08:58 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.8ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+Completed 401 Unauthorized in 26ms (Views: 2.6ms | ActiveRecord: 1.6ms | Allocations: 2801)
+
+
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAuthToken Load (0.6ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
+Started POST "/customer/events/1" for ::1 at 2020-05-17 19:11:32 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+Completed 401 Unauthorized in 31ms (Views: 0.2ms | ActiveRecord: 10.0ms | Allocations: 18452)
+
+
+Started POST "/customer/events/1" for ::1 at 2020-05-17 19:12:42 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.3ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `current_user'
+Completed 401 Unauthorized in 38ms (Views: 0.2ms | ActiveRecord: 7.4ms | Allocations: 19072)
+
+
+Started POST "/customer/events/1" for ::1 at 2020-05-17 19:13:26 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27:in `current_user'
+Completed 401 Unauthorized in 29ms (Views: 0.2ms | ActiveRecord: 7.3ms | Allocations: 19039)
+
+
+Started POST "/customer/events/1" for ::1 at 2020-05-17 19:14:02 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.3ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27:in `current_user'
+Completed 401 Unauthorized in 73ms (Views: 0.2ms | ActiveRecord: 6.8ms | Allocations: 19727)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/customer/users" for ::1 at 2020-05-17 19:17:06 +0530
+Processing by Customer::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"pradeep chauhan", "email"=>"pradeep@gkmit.co", "gender"=>"male", "password"=>"[FILTERED]", "role"=>"customer"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" IS NOT NULL LIMIT $2[0m  [["email", "pradeep@gkmit.co"], ["LIMIT", 1]]
+  ↳ app/forms/user_form.rb:16:in `unique_email_address'
+Completed 422 Unprocessable Entity in 241ms (Views: 0.2ms | ActiveRecord: 3.5ms | Allocations: 12877)
+
+
+Started POST "/customer/events/1" for ::1 at 2020-05-17 19:17:25 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.3ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+Completed 401 Unauthorized in 35ms (Views: 0.2ms | ActiveRecord: 6.3ms | Allocations: 7767)
+
+
+Started POST "/customer/events/1" for ::1 at 2020-05-17 19:17:27 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.4ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 2533)
+
+
+Started POST "/customer/events/1" for ::1 at 2020-05-17 19:18:25 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+Completed 401 Unauthorized in 25ms (Views: 0.2ms | ActiveRecord: 6.2ms | Allocations: 18410)
+
+
+Started POST "/customer/events/1" for ::1 at 2020-05-17 19:20:41 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+Completed 422 Unprocessable Entity in 215ms (Views: 0.2ms | ActiveRecord: 7.4ms | Allocations: 129142)
+
+
+Started POST "/customer/events/1" for ::1 at 2020-05-17 19:21:20 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+Completed 422 Unprocessable Entity in 45ms (Views: 0.2ms | ActiveRecord: 7.5ms | Allocations: 28363)
+
+
+Started POST "/customer/events/1" for ::1 at 2020-05-17 19:22:27 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+Completed 422 Unprocessable Entity in 42ms (Views: 0.2ms | ActiveRecord: 7.2ms | Allocations: 28305)
+
+
+Started POST "/customer/events/1" for ::1 at 2020-05-17 19:22:54 +0530
+Processing by Customer::EventsController#book as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event.rb:8:in `add_participant'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/event.rb:8:in `add_participant'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event.rb:8:in `add_participant'
+  [1m[36mParticipant Create (7.1ms)[0m  [1m[32mINSERT INTO "participants" ("user_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["event_id", 1], ["created_at", "2020-05-17 13:52:54.601064"], ["updated_at", "2020-05-17 13:52:54.601064"]]
+  ↳ app/models/event.rb:8:in `add_participant'
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/event.rb:8:in `add_participant'
+Completed 200 OK in 64ms (Views: 0.2ms | ActiveRecord: 22.1ms | Allocations: 36109)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participants" ON "events"."id" = "participants"."event_id" WHERE "participants"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:23:48 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+Completed 422 Unprocessable Entity in 40ms (Views: 0.2ms | ActiveRecord: 8.2ms | Allocations: 30164)
+
+
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:25:27 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.1ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+Completed 422 Unprocessable Entity in 42ms (Views: 0.2ms | ActiveRecord: 8.5ms | Allocations: 29021)
+
+
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:26:46 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:34:in `exists'
+Completed 422 Unprocessable Entity in 38ms (Views: 0.2ms | ActiveRecord: 8.4ms | Allocations: 29025)
+
+
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:27:51 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:34:in `exists'
+Completed 422 Unprocessable Entity in 69ms (Views: 0.1ms | ActiveRecord: 10.0ms | Allocations: 29724)
+
+
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:28:37 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.2ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:34:in `exists'
+Completed 422 Unprocessable Entity in 54ms (Views: 0.1ms | ActiveRecord: 9.3ms | Allocations: 29020)
+
+
+Started DELETE "/customer/events/1" for ::1 at 2020-05-17 19:30:13 +0530
+Processing by Customer::EventsController#cancel as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mAuthToken Load (0.3ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `authenticate_token'
+  [1m[36mCACHE AuthToken Load (0.0ms)[0m  [1m[34mSELECT "auth_tokens".* FROM "auth_tokens" WHERE "auth_tokens"."token" = $1 LIMIT $2[0m  [["token", "naf_HH3TAfs"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `current_user'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer/events_controller.rb:33:in `exists'
+Completed 422 Unprocessable Entity in 60ms (Views: 0.1ms | ActiveRecord: 12.2ms | Allocations: 29011)
+
+

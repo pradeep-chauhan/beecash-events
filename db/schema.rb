@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_17_071746) do
+ActiveRecord::Schema.define(version: 2020_05_17_115350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,16 +37,20 @@ ActiveRecord::Schema.define(version: 2020_05_17_071746) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "events_users", force: :cascade do |t|
-    t.integer "event_id"
-    t.integer "user_id"
+  create_table "participants", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_participants_on_event_id"
+    t.index ["user_id"], name: "index_participants_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "gender"
-    t.string "role"
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "gender", null: false
+    t.string "role", null: false
     t.boolean "is_active", default: false, null: false
     t.string "password_digest"
     t.string "confirmation_token"
@@ -57,4 +61,6 @@ ActiveRecord::Schema.define(version: 2020_05_17_071746) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "participants", "events"
+  add_foreign_key "participants", "users"
 end

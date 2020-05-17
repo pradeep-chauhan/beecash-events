@@ -3,7 +3,8 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :auth_tokens
-  has_and_belongs_to_many :events
+  has_many :participants
+  has_many :events, through: :participants
   validates :password, presence: true, length: { minimum: 6 }, if: -> { password.present? }
   before_create :set_default, if: -> { role == 'admin' || role == 'customer' }
   before_update :clear_auth_tokens, :clear_reset_password_token, if: -> { password_digest_changed? }

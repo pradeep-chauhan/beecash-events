@@ -6,6 +6,7 @@ class Customer::ApiController < ApplicationController
   private
 
   def authorize!
+    p Current.user.role
     raise Errors::UnauthorizedErrorHandler::UserIsNotAuthorized unless Current.user.role == 'customer'
   end
 end
