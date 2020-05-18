@@ -26,6 +26,18 @@ const items = [
             }
         ]
     },    
+    {
+        "id": 3,
+        "title": "",
+        "items": [
+            {
+                "id": "event-module",
+                "icon": "group",
+                "name": "event",
+                "link": "/app/events",                
+            }
+        ]
+    },    
 ]
 
 class MainMenu extends React.Component {

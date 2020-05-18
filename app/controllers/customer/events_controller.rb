@@ -6,11 +6,12 @@ class Customer::EventsController < Customer::ApiController
 
   def index
     events = Event.all
-    render json: { events: events.map { EventPresenter.new(event)._show() } }, status: :ok
+    # render json: { events: events.map { EventPresenter.new(event)._show() } }, status: :ok
+    render json: { data: events }, status: :ok
   end
 
   def show
-    render json: { event: EventPresenter.new(@event)._show() }, status: :ok
+    render json: { data: EventPresenter.new(@event)._show() }, status: :ok
   end
 
   def book
@@ -21,7 +22,7 @@ class Customer::EventsController < Customer::ApiController
   end
 
   def cancel
-    Participant.find_by(id: @event.id).delete
+    Current.user.events.where(@event.id).delete!
     render json: { message: 'Successfully cancelled' }, status: :ok
   rescue StandardError => e
     render json: { error: e.message }, status: :unprocessable_entity

@@ -4,13 +4,13 @@ export const userService = {
     logout,
 };
 
-function login(email, password) {
+function login(url,email, password) {
     const user = {
         email,
         password
     };
 
-    return apiConfig.post(`/admin/login`, { user })
+    return apiConfig.post(url, { user })
         .then(data => {
             if (data.status === 200) {
                 localStorage.setItem('user', JSON.stringify(data.data.user));

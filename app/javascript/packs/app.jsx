@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Login from './pages/login';
 import AdminRoutes from './adminRoutes';
 import { connect } from 'react-redux';
 import { loaderActions, confirmActions, alertActions } from './_actions';
@@ -9,6 +8,12 @@ import Loader from './_component/alert/loader';
 import AlertConfirmDialog from './_component/alert/alertConfirmDialog';
 import AlertMessage from './_component/alert/alertMessage';
 import Modal from './_component/modal';
+
+import Login from './pages/login';
+import Home from './frontend/home';
+import EventDetail from './frontend/eventsDetail';
+
+
 class App extends React.Component {
 
     componentDidMount() {
@@ -42,8 +47,10 @@ class App extends React.Component {
                 />}
 
                 <Router>
-                    <Switch>
-                        <Route path='/' exact component={Login} />
+                    <Switch>                       
+                        <Route path='/' exact component={Home} />
+                        <Route path='/app/login' exact component={Login} />
+                        <Route path='/app/event-detail/:id' component={EventDetail} />
                         <AdminRoutes />
                     </Switch>
                 </Router>

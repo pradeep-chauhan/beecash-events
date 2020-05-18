@@ -28,8 +28,9 @@ function _get(kind, url, id) {
         crudService._get(url, id)
             .then(
                 result => {
+                    console.log(result)
                     if (result.status === 200) {
-                        dispatch(success(result.data))
+                        dispatch(success(result.data.data))
                     }
                 },
                 error => {

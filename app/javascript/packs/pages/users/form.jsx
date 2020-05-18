@@ -16,7 +16,10 @@ class Form extends React.Component {
             id: null,
             form: {
                 name: '',
-                details: ''
+                email: '',
+                gender: '',
+                password: '',
+                role: '',
             }
         }
     }
@@ -32,13 +35,37 @@ class Form extends React.Component {
             value: form.name,
             validation: 'required',
         })
-
         formFields.push({
-            name: 'details',
-            label: 'Details',
+            name: 'email',
+            label: 'email',
             type: 'text',
-            value: form.details,
-            validation: null,
+            icon: '',
+            value: form.email,
+            validation: 'required|email',
+        })
+        formFields.push({
+            name: 'gender',
+            label: 'gender',
+            type: 'text',
+            icon: '',
+            value: form.gender,
+            validation: 'required',
+        })
+        formFields.push({
+            name: 'password',
+            label: 'password',
+            type: 'password',
+            icon: '',
+            value: form.password,
+            validation: 'required',
+        })
+        formFields.push({
+            name: 'role',
+            label: 'role',
+            type: 'text',
+            icon: '',
+            value: form.role,
+            validation: 'required',
         })
 
         return formFields
@@ -47,7 +74,7 @@ class Form extends React.Component {
     componentDidMount() {
         const { id } = this.props.match.params
         if (id && id !== 'new') {
-            this.props.getData('form', 'users', id)
+            this.props.getData('form', 'admin/users', id)
         }
     }
 
@@ -63,7 +90,7 @@ class Form extends React.Component {
         }
 
         if (props.formSubmit) {
-            props.history.push('/users')
+            props.history.push('/app/users')
         }
 
         return newState
@@ -75,18 +102,14 @@ class Form extends React.Component {
         this.setState(form)
     }
 
-    handleSubmit = (user) => {
-        user.pruserDefault();
+    handleSubmit = (event) => {
+        event.preventDefault();
         const { action, id, form } = this.state
         if (form) {
-            const formData = {
-                name: form.name,
-                details: form.details,
-            }
             if (action === 'update') {
-                this.props.updateData('form', 'users', id, formData)
+                this.props.updateData('form', 'admin/users', id, { user: form })
             } else {
-                this.props.createData('form', 'users', formData)
+                this.props.createData('form', 'admin/users', { user: form })
             }
         }
     }

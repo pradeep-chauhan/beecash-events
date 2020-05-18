@@ -5,11 +5,11 @@ class Admin::EventsController < Admin::ApiController
 
   def index
     events = Event.all
-    render json: { events: events }, status: :ok
+    render json: { data: events }, status: :ok
   end
 
   def show
-    render json: { event: EventPresenter.new(@event)._show(attendee_included: true) }, status: :ok
+    render json: { data: EventPresenter.new(@event)._show(attendee_included: true) }, status: :ok
   end
 
   def create

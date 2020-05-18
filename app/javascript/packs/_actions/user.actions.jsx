@@ -9,16 +9,20 @@ export const userActions = {
 
 };
 
-function login(username, password) {
+function login(url, username, password) {
     return dispatch => {
         dispatch(request({ username }));
 
-        userService.login(username, password)
+        userService.login(url, username, password)
             .then(
                 user => {
                     if (user.status === 200) {
-                        dispatch(success(user.user));
-                        history.push('/app/dashboard');
+                        dispatch(success(user.user));                        
+                        if (url === '/admin/login') {
+                            history.push('/app/dashboard');
+                        } else {
+                            history.push('/');
+                        }
                     }
                 },
                 error => {

@@ -34,13 +34,13 @@ class MuiForm extends React.Component {
     getFieldError = (field) => {
         const { formError } = this.props
         let error
-        if (formError) {
-            formError.forEach(element => {
-                if (element.field === field) {
-                    error = element.message
-                }
-            });
-        }
+        // if (formError) {
+        //     formError.forEach(element => {
+        //         if (element.field === field) {
+        //             error = element.message
+        //         }
+        //     });
+        // }
         return error
     }
 

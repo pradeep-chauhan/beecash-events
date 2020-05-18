@@ -53,7 +53,7 @@ class Login extends React.Component {
             }
         }
     }
-
+    
     createForm = () => {
         const { form } = this.state
         let formFields = []
@@ -87,7 +87,12 @@ class Login extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const { form } = this.state
-        this.props.login(form.email, form.password)
+        const { search } = this.props.location
+        if (search == '?type=customer') {
+            this.props.login('/customer/login', form.email, form.password)
+        } else {
+            this.props.login('/admin/login', form.email, form.password)
+        }
     }
 
     render() {
