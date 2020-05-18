@@ -5,7 +5,7 @@ class Admin::EventsController < Admin::ApiController
 
   def index
     events = Event.all
-    render json: { data: events }, status: :ok
+    render json: { events: events.map { |event| EventPresenter.new(event)._show() } }, status: :ok
   end
 
   def show

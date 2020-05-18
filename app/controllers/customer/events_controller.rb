@@ -6,12 +6,11 @@ class Customer::EventsController < Customer::ApiController
 
   def index
     events = Event.all
-    # render json: { events: events.map { EventPresenter.new(event)._show() } }, status: :ok
-    render json: { data: events }, status: :ok
+    render json: { events: events.map { |event| EventPresenter.new(event)._show() } }, status: :ok
   end
 
   def show
-    render json: { data: EventPresenter.new(@event)._show() }, status: :ok
+    render json: { event: EventPresenter.new(@event)._show() }, status: :ok
   end
 
   def book

@@ -7,16 +7,16 @@ class Admin::UsersController < Admin::ApiController
 
   def role_index
     users = RoledUsersQuery.new(params[:role], User.all).all
-    render json: { data: users.map { |user| UserPresenter.new(user)._show } }, status: :ok
+    render json: { users: users.map { |user| UserPresenter.new(user)._show } }, status: :ok
   end
 
   def index
     users = User.all
-    render json: { data: users }, status: :ok
+    render json: { users: users.map { |user| UserPresenter.new(user)._show } }, status: :ok
   end
 
   def show
-    render json: { data: UserPresenter.new(@user)._show }, status: :ok
+    render json: { user: UserPresenter.new(@user)._show }, status: :ok
   end
 
   def create
