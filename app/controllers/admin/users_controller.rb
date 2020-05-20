@@ -16,7 +16,7 @@ class Admin::UsersController < Admin::ApiController
   end
 
   def show
-    render json: { user: UserPresenter.new(@user)._show }, status: :ok
+    render json: { data: UserPresenter.new(@user)._show }, status: :ok
   end
 
   def create

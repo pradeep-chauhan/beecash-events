@@ -8,14 +8,9 @@ class MaterialDataTable extends React.PureComponent {
         super(props)
         this.state = {
             columns: this.props.columns,
-            resultData: []
         }
 
         this.tableRef = React.createRef();
-    }
-
-    componentDidMount() {
-        this.fetchData()
     }
 
     componentDidUpdate() {
@@ -24,22 +19,9 @@ class MaterialDataTable extends React.PureComponent {
         }
     }
 
-    fetchData = () => {
-        const { serverSide } = this.props
-        if (!serverSide) {
-            crudService._getAll(this.props.url, [])
-                .then(
-                    result => {                        
-                        this.setState({ resultData: result.data.data })
-                    }
-                );
-        }
-    }
-
     render() {
-        const { columns, resultData } = this.state
-        console.log('resultData', resultData)
-        const { selection, refresh, serverSide } = this.props
+        const { columns } = this.state
+        const { selection, refresh, serverSide, data } = this.props
         const actions = []
         const options = {
             selection: selection,
@@ -107,7 +89,7 @@ class MaterialDataTable extends React.PureComponent {
             return (
                 <MaterialTable                    
                     title={this.props.title}
-                    data={resultData}
+                    data={data}
                     options={options}
                     actions={actions}
                     columns={columns}

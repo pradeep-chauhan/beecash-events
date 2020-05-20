@@ -4,9 +4,30 @@ import { crudActions, confirmActions } from '../../_actions';
 
 import { TableAction } from '../../_component/material-table/tableAction'
 import MaterialDataTable from '../../_component/material-table'
+import { crudService } from '../../_services';
 
 const title = 'user List'
 class List extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            resultData: []
+        }
+    }
+
+    componentDidMount() {
+        this.fetchData()
+    }
+
+    fetchData = () => {
+        crudService._getAll('admin/users', [])
+            .then(
+                result => {                        
+                    this.setState({ resultData: result.data.users })
+                }
+            );
+    }
 
     componentDidUpdate() {
         if (this.props.confirm.confirm) {
@@ -42,6 +63,7 @@ class List extends React.Component {
     }
 
     render() {
+        const {resultData} = this.state
         const columns = []
         columns.push({
             title: "name",
@@ -66,13 +88,13 @@ class List extends React.Component {
             <React.Fragment>
                 <MaterialDataTable
                     title={title}
-                    url='admin/users'
                     columns={columns}
                     selection={true}
                     addData={this.addData}
                     deleteAll={this.deleteAll}
                     refresh={true}
                     serverSide={false}
+                    data={resultData}
                 />
             </React.Fragment>
         );

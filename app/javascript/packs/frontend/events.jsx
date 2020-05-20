@@ -7,6 +7,7 @@ import { crudActions, confirmActions } from '../_actions';
 
 import { TableAction } from '../_component/material-table/tableAction'
 import MaterialDataTable from '../_component/material-table'
+import { crudService } from '../_services';
 
 
 
@@ -59,13 +60,32 @@ const title = 'events'
 
 class EventLists extends React.Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            resultData: []
+        }
+    }
 
+    componentDidMount() {
+        this.fetchData()
+    }
+
+    fetchData = () => {
+        crudService._getAll('customer/events', [])
+            .then(
+                result => {                        
+                    this.setState({ resultData: result.data.events })
+                }
+            );
+    }
 
     viewData = (data) => {        
         this.props.history.push(`/app/event-detail/${data.id}`)
     }
 
     render() {
+        const {resultData} = this.state
         const columns = []
         columns.push({
             title: "title",
@@ -90,11 +110,11 @@ class EventLists extends React.Component {
             <React.Fragment>
                 <MaterialDataTable
                     title={title}
-                    url='customer/events'
                     columns={columns}
                     selection={true}
                     refresh={true}
                     serverSide={false}
+                    data={resultData}
                 />
             </React.Fragment>
         );
