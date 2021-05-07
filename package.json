@@ -43,7 +43,7 @@
     "redux-thunk": "^2.3.0",
     "simple-react-validator": "^1.4.6",
     "turbolinks": "^5.2.0",
-    "underscore": "^1.10.2"
+    "underscore": "^1.12.1"
   },
   "version": "0.1.0",
   "devDependencies": {
